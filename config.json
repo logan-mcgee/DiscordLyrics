@@ -1,0 +1,16 @@
+{
+	"DiscordToken": "optional!",
+	"SpotifyApi": {
+		"client_id": "",
+		"client_secret": "",
+		"redirect_uri": "http://127.0.0.1:3000/authorize"
+	},
+	"MusixMatch": {
+		"usertoken": "191231a5ea353397cca5b11ab22048db1f50f515a99e174078b148",
+		"signature": "d9UI+QhfKS2hrs2BbiIKkBZykgs=",
+		"Cookie": "AWSELB=55578B011601B1EF8BC274C33F9043CA947F99DCFF6AB1B746DBF1E96A6F2B997493EE03F246465F0C13E5B1F720DBC6D3E3802C92E4E48F6DE4DEB9C95CF2A68340C40430"
+	},
+	"callback_port": 3000,
+	"song_refresh": 2500,
+	"resync_time": 10000
+}
