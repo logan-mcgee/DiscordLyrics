@@ -2,7 +2,7 @@
 Use MusixMatch API to sync spotify song lyrics to Discord Status
 
 ## How to use?
-1. Install Node.JS, duh
+1. Install [Node.js](https://nodejs.org/en/)
 2. cd into the directory and use `npm i`
 3. Head to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications) and create an application.
 4. Make sure your `redirect_uri` is set to `http://127.0.0.1:3000/authorize` unless changed in the config.json.
