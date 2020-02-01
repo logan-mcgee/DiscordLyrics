@@ -64,7 +64,7 @@ if (TokenCheck.AccessToken == ("" || null) || TokenCheck.RefreshToken == ("" || 
 	console.log(`Please visit:\nhttps://accounts.spotify.com/authorize?response_type=code&client_id=${config.SpotifyApi.client_id}&scope=user-read-playback-state&redirect_uri=${config.SpotifyApi.redirect_uri}\n`);
 	ExpressServer = app.listen(config.callback_port);
 } else {
-	console.log("Token found, skipping authentication\n");
+	console.log("Token found, skipping authentication");
 	CheckForChange();
 }
 
