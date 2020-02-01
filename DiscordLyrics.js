@@ -13,8 +13,8 @@ try {
 	TokenCheck = require("./token.json");
 } catch (e) {
 	fs.writeFileSync(__dirname + "/token.json", JSON.stringify({
-		AccessToken: "",
-		RefreshToken: ""
+		AccessToken: null,
+		RefreshToken: null
 	}));
 	console.error("Token.json was not found.\nRestart program to proceed.\n")
 	process.exit();
@@ -60,7 +60,7 @@ app.get("/authorize", async (req, res) => {
 });
 
 
-if (TokenCheck.CurrentToken == ("" || null) || TokenCheck.RefreshToken == ("" || null)) {
+if (TokenCheck.AccessToken == ("" || null) || TokenCheck.RefreshToken == ("" || null)) {
 	console.log(`Please visit:\nhttps://accounts.spotify.com/authorize?response_type=code&client_id=${config.SpotifyApi.client_id}&scope=user-read-playback-state&redirect_uri=${config.SpotifyApi.redirect_uri}\n`);
 	ExpressServer = app.listen(config.callback_port);
 } else {
@@ -209,8 +209,6 @@ async function CheckForChange() {
 	}
 	setTimeout(CheckForChange, config.song_refresh);
 }
-
-
 
 async function beginResync() {
 	let syncres = await request({
