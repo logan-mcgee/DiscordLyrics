@@ -20,6 +20,7 @@ try {
 	process.exit();
 }
 
+// Initialise vars
 let SpotifyToken = GetSpotifyToken();
 let SongSeconds;
 let ExpressServer;
