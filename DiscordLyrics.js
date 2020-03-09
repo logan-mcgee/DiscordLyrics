@@ -268,11 +268,19 @@ async function TriggerSongPlaying() {
 
 	try {
 		let lyricres = JSON.parse(lyrres.body);
-		let lyricsarr = JSON.parse(lyricres.message.body.macro_calls["track.subtitles.get"].message.body.subtitle_list[0].subtitle.subtitle_body);
+		let lyricsarr = null;
+
+		if (lyricres.message.body.macro_calls["userblob.get"].message.header.status_code == "200") {
+			lyricsarr = lyricres.message.body.macro_calls["userblob.get"].message.body.subtitles;
+		}
+
+		if (lyricres.message.body.macro_calls["track.subtitles.get"].message.header.status_code == "200") {
+			lyricsarr = JSON.parse(lyricres.message.body.macro_calls["track.subtitles.get"].message.body.subtitle_list[0].subtitle.subtitle_body);
+		}
 		
 		let lyrics = {};
 		for (let lyricIndex in lyricsarr) {
-			lyrics[lyricsarr[lyricIndex].time.total] = lyricsarr[lyricIndex].text;
+			lyrics[lyricsarr[lyricIndex].time.total.toFixed(2)] = lyricsarr[lyricIndex].text;
 		}
 
 		let lateres = await request({
