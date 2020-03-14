@@ -1,7 +1,8 @@
 # DiscordLyrics
 Use MusixMatch API to sync spotify song lyrics to Discord Status
 
-oh yeah tbf its prob deffo against ToS like so its not really my fault so yeah glhf
+Discord Trust & Safety disapproves :(
+(wouldnt reccomend using if u dont want to get a message by discord)
 
 ## How to use?
 1. Install [Node.js](https://nodejs.org/en/)
