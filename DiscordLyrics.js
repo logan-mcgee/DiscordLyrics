@@ -24,7 +24,7 @@ try {
 let SpotifyToken = GetSpotifyToken();
 let SongSeconds;
 let ExpressServer;
-let SpotifyBase64 = new Buffer(`${config.SpotifyApi.client_id}:${config.SpotifyApi.client_secret}`).toString("base64");
+let SpotifyBase64 = new Buffer.from(`${config.SpotifyApi.client_id}:${config.SpotifyApi.client_secret}`).toString("base64");
 let CurrentURI = "";
 let IsPaused = false;
 
